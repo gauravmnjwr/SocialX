@@ -1,5 +1,8 @@
 module.exports.about=function(req,res){
-  res.end('<h1>ABOUT SECTION YAYYYY</h1>')
+  res.render('about',{
+    title:"ABOUT",
+    sectionname:"THIS IS ABOUT"
+  })
 }
 
 module.exports.mine= function(req,res){
