@@ -1,12 +1,17 @@
 const express= require('express');
+const cookieParser= require('cookie-parser');
 const expressLayouts=require('express-ejs-layouts');
 const port=8000; // 80 as in default production server
 const app= express();
 const db=require('./config/mongoose');
+
+
+
+
 app.use(express.urlencoded());
 
-
-
+//calling cookie parser
+app.use(cookieParser());
 
 app.use(expressLayouts);
 
