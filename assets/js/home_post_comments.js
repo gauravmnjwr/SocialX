@@ -7,7 +7,6 @@
 class PostComments{
     // constructor is used to initialize the instance of the class whenever a new instance is created
     constructor(postId){
-        console.log('yo')
 
         this.postId = postId;
         this.postContainer = $(`#post-${postId}`);
@@ -24,6 +23,8 @@ class PostComments{
 
 
     createComment(postId){
+        console.log('yo')
+
         let pSelf = this;
         this.newCommentForm.submit(function(e){
             e.preventDefault();
@@ -47,6 +48,8 @@ class PostComments{
                         timeout: 1500
                         
                     }).show();
+                    console.log('yo')
+
 
                 }, error: function(error){
                     console.log(error.responseText);
