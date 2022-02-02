@@ -13,8 +13,12 @@ const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware-5');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
-
 const passportGoogle= require('./config/passport-google-oauth2-strategy')
+
+//for socket.io 
+const chatServer= require('http').Server(app);
+const chatSocket= require('./config/chat_socket').chatSockets(chatServer);
+chatServer.listen(5000);
 
 
 app.use(sassMiddleware({

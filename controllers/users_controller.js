@@ -1,6 +1,8 @@
 const User = require('../models/user');
 const fs= require('fs');
 const path= require('path');
+const Friendship= require('../models/friendship');
+
 
 // let's keep it same as before
 module.exports.profile = function(req, res){
@@ -105,7 +107,28 @@ module.exports.create = function(req, res){
     });
 }
 
+module.exports.addFriend= function(req,res){
+    let currentUser= req.user.id;
+    let userToBeAdded=req.params.id;
+    let flag=false;
+    
+    Friendship.find({currentUser:userToBeAdded}).
+    then(user=>{
+        for(u of user){
+            // console.log(user);
+            u.remove();
+            flag=true;
+        }
 
+    })
+    if(!flag){
+        Friendship.create({
+            from_user:currentUser,  
+            to_user:userToBeAdded
+        });
+    }
+    return res.redirect('back');
+}
 // sign in and create a session for the user
 module.exports.createSession = function(req, res){
     req.flash('success', 'Logged in Successfully');

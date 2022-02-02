@@ -11,8 +11,12 @@
                 <input type="submit"  value="Update">
             </form>
             
+            
         <%}else{%>    
             <!-- else show only the profile info -->
             <p><%= profile_user.name %></p>
             <p><%= profile_user.email %></p>
+            <a href="/users/add-friend/<%=profile_user.id%>">
+                <button>Add Friend</button>
+            </a>
         <%} %>
