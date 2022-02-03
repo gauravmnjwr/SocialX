@@ -16,9 +16,11 @@ const customMware = require('./config/middleware');
 const passportGoogle= require('./config/passport-google-oauth2-strategy')
 
 //for socket.io 
-const chatServer= require('http').Server(app);
-const chatSocket= require('./config/chat_socket').chatSockets(chatServer);
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
+console.log('chat server is listening on port 5000');
+
 
 
 app.use(sassMiddleware({
