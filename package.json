@@ -4,13 +4,19 @@
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.6",
     "crypto": "^1.0.1",
+    "del": "^6.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
     "jsonwebtoken": "^8.5.1",
     "kue": "^0.11.6",
     "mongoose": "^6.1.7",
+    "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "node-sass-middleware-5": "^0.0.2",
     "nodemailer": "^6.7.2",
@@ -18,6 +24,8 @@
     "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "rotating-file-stream": "^3.0.2",
+    "sass": "^1.49.7",
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1"
   },
@@ -27,7 +35,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod_start": "NODE_ENV=production nodemon index.js"
   },
   "keywords": [
     "social"
@@ -41,5 +50,10 @@
   "bugs": {
     "url": "https://github.com/gauravmnjwr/codeial/issues"
   },
-  "homepage": "https://github.com/gauravmnjwr/codeial#readme"
+  "homepage": "https://github.com/gauravmnjwr/codeial#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-uglify-es": "^3.0.0"
+  }
 }
